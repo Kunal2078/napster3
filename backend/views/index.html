@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/admin" method="post">
+        <label for="image">image url
+        </label>
+            <input type="text" name="image" id="image">
+            <br>
+        <label for="movieName">movie name
+        </label>
+            <input type="text" name="movieName" id="movieName">
+            <br>
+        <label for="trailer">trailer url
+        </label>
+            <input type="text" name="trailer" id="trailer">
+            <br>
+        <label for="Description">Description
+        </label>
+            <input type="text" name="Description" id="Description">
+            <br>
+        <label for="movieUrl">movie-link
+        </label>
+            <input type="text" name="movieUrl" id="movieUrl">
+            <br>
+            <label for="category">category</label>
+            <select name="category" id="category" multiple>
+                <option value="Sci-fi">Sci-fi</option>
+                <option value="New">New</option>
+                <option value="commedy">commedy</option>
+                <option value="Action">Action</option>
+              </select>
+            <button type="submit"> submit</button>
+            <button type="reset">reset</button>
+    </form>
+</body>
+</html>

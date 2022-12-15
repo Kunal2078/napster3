@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/bce86fac31.js" crossorigin="anonymous"></script>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="../../css/style.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+</head>
+<body style="background-color: rgb(20, 20, 20);">
+
+  <nav id="navbar" class="navbar ">
+    <div class="container-fluid" id="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img class="netflix-logo" src="../../img/napster.png" alt="" width="180px;" height="60px">
+      </a>
+      <div class="navigation-links-container">
+
+        <div class="dropdown dropdown-browse">
+          <button id="btn" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            <span>
+              Browse
+            </span>
+          </button>
+          <ul class="dropdown-menu bg-dark ">
+            <li><a class="dropdown-item text-light" href="../Movies/">Movies</a></li>
+            <li><a class="dropdown-item text-light" href="../New&Popular/">New & Popular</a></li>
+            <li><a class="dropdown-item text-light" href="#">Home</a></li>
+          </ul>
+        </div>
+        <ul class="navigation-links">
+          <li><a class="navigation-links" href="../browse/">Home</a></li>
+          <li><a class="navigation-links" href="../Movies/">Movies</a></li>
+          <li><a class="navigation-links" href="../New&Popular/">New & Popular</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <nav id="navbar-searchbar" class="navbar -searchbar">
+      <div class="container-fluid">
+        <form class="d-flex" role="search">
+          <!-- <input id="searchbar" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button id="search-btn" class="btn btn-outline-success" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button> 
+            -->
+          <div class="search-box">
+            <button class="btn-search" type="button"><i class="fas fa-search"></i></button>
+            <input type="text" class="input-search" placeholder="Type to Search...">
+          </div>
+
+        </form>
+      </div>
+      <div class="dropdown ">
+        <button id="btn" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+          aria-expanded="false">
+          <i class="fa-solid fa-user"></i>
+        </button>
+        <ul class="dropdown-menu bg-dark dropdown-menu-end">
+          <li><a class="dropdown-item text-light " href="#">Action</a></li>
+          <li><a class="dropdown-item text-light" href="#">Another action</a></li>
+          <li><a class="dropdown-item text-light" href="#"><form action="/logout?_method=DELETE" method="post"><button type="submit">logout</button></form></a></li>
+        </ul>
+      </div>
+    </nav>
+  </nav>
+
+  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+        aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+        aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+        aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+        aria-label="Slide 4"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"
+        aria-label="Slide 5"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img
+        src="https://imageservice.sky.com/pcms/cf5c3098-1fac-11ed-af47-63a0c92c2d31/LAND_16_9?territory=GB&proposition=NOWTV&language=eng"
+        class="d-block w-100" alt="...">
+        
+      </div>
+      <div class="carousel-item">
+        <img src="https://wallpaperaccess.com/full/1457553.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="https://flxt.tmsimg.com/assets/p14899995_b_h10_ac.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="https://wallpapercave.com/wp/wp9201685.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img
+        src="https://www.popspace.it/wp-content/uploads/2022/02/LOTR_-The-Ring-of-Power-mostrati-i-nuovi-personaggi-1.jpg"
+        class="d-block w-100" alt="...">
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+  <div class="container1" id="container1">
+    <div class="cards" id="data">
+      <h2>Popular On Netflix</h2>
+      <div class="slider" id="slider"></div>
+      <h2>Action</h2>
+
+      <div class="slider" id="Actionslider"></div>
+    </div>
+  
+</div>
+  <script type="module">
+    import { init } from "../../modules/browse.js";
+  
+    //entry point (executed when DOM is loaded)
+    (async function () {
+        init();
+    })();
+  </script>
+  
+ 
+
+  <!-- // bootstrap js // -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous">
+</script>
+
+</body>
+</html>
