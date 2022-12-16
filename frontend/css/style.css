@@ -930,7 +930,7 @@ animation: info 1000ms forwards ease;
   }
   .info-details {
     width: 100vw;
-    height: auto;
+    height: 150pc;
   }
   .info-container {
     bottom: 0;
@@ -939,7 +939,10 @@ animation: info 1000ms forwards ease;
     animation: info-mobile 1000ms forwards ease;
   }
   .filter-body{
-    height: auto;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    
   }
   .category-container{
     gap: 0;
@@ -959,8 +962,12 @@ animation: info 1000ms forwards ease;
   }
   .movie-details{
     margin-left: 0;
+    flex-direction: column;
   }
 
+  .cast-container{
+    height: 25vh !important;
+  }
   .info-play-button {
     width: 20vw;
     height: 4vh;

@@ -120,7 +120,7 @@ async function addMoviestoDOM(
           </form>
         </div>
         <div class="cast-container d-flex flex-row">
-          <div class="bg-light m-5 " style="width:1px;margin-right:20px !important"></div>
+          <div class="bg-light  m-5-lg  mt-5 ms-0" style="width:1px;margin-right:20px !important"></div>
           <div class="d-flex flex-column " style="padding: 30px 36px 30px 0;justify-content:space-evenly;">
             <span style="color:grey">Cast: <span style="color:#fff">${cast}</span></span>
             <span style="color:grey">Genre: <span style="color:#fff">${category}</span></span>
