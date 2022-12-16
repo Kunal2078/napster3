@@ -776,8 +776,8 @@ animation: info 1000ms forwards ease;
 }
 .info-details {
   position: relative;
-  width: 60vw;
-  height: 100vh;
+  width: 68vw;
+  height: 100pc;
   margin-left: auto;
   margin-right: auto;
   left: 0;
@@ -790,7 +790,7 @@ animation: info 1000ms forwards ease;
   height: auto;
 }
 .youtube-trailer {
-  width: 60vw;
+  width: 68vw;
   height: 50vh;
 }
 .movie-details {
@@ -808,7 +808,7 @@ animation: info 1000ms forwards ease;
 }
 .movie-description {
   font-size: 1.2rem;
-  width: 35vw;
+  width: 41vw;
   font-weight: 700;
   font-family: Montserrat;
   color: #fff;

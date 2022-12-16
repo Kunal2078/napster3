@@ -107,7 +107,12 @@ app.post('/admin',async(req,res)=>{
       trailerUrl:req.body.trailer,
       bio:req.body.Description,
       movieUrl:req.body.movieUrl,
-      category:req.body.category
+      category:req.body.category,
+      director:req.body.director,
+      cast:req.body.cast,
+      writer:req.body.writer,
+      movieAbout:req.body.movieAbout,
+      rating:req.body.rating,
 
       
 

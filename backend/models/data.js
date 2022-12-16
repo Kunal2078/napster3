@@ -28,7 +28,22 @@ unique:true
   },
   category:{
     type:String
-  }
+  },
+  director:{
+    type:String
+  },
+cast:{
+type:String
+},
+writer:{
+type:String
+},
+movieAbout:{
+type:String
+},
+rating:{
+  type:Number
+}
 
 });
 

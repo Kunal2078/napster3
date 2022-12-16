@@ -18,7 +18,12 @@ async function init() {
       key.trailerUrl,
       key.bio,
       key.movieUrl,
-      key.category
+      key.category,
+      key.director,
+      key.cast,
+      key.writer,
+      key.movieAbout,
+      key.rating
     );
   });
 }
@@ -45,7 +50,12 @@ async function addMoviestoDOM(
   trailerUrl,
   bio,
   movieUrl,
-  category
+  category,
+  director,
+  cast,
+  writer,
+  movieAbout,
+  rating
 ) {
   // TODO: MODULE_CITIES
 
@@ -106,37 +116,90 @@ async function addMoviestoDOM(
               <button type="button" class="info-play-button"> Play <i class="fa-solid fa-play"> </i></button>
             </a>
             <button class="like-button"> <i class="fa-solid fa-thumbs-up"> </i></button>
-            <span class="d-flex align-items-center"><i class="fa-solid fa-star"></i> <p class="m-0 ps-2">8.3/10</p></span>
+            <span class="d-flex align-items-center"><i class="fa-solid fa-star"></i> <p class="m-0 ps-2">${rating}/10</p></span>
           </form>
         </div>
         <div class="cast-container d-flex flex-row">
-          <div class="bg-light m-5 " style="width:1px"></div>
-          <div class="d-flex flex-column justify-content-around" style="padding: 30px 36px 30px 0;">
-            <span style="color:grey">Cast: <span style="color:#fff">chirtian bale, nolan, vladjjddj</span></span>
-            <span style="color:grey">Genre: <span style="color:#fff">chirtian bale, nolan, vladjjddj</span></span>
-            <span style="color:grey">This movie is: <span style="color:#fff">chirtian bale, nolan,
-                vladjjddj</span></span>
+          <div class="bg-light m-5 " style="width:1px;margin-right:20px !important"></div>
+          <div class="d-flex flex-column " style="padding: 30px 36px 30px 0;justify-content:space-evenly;">
+            <span style="color:grey">Cast: <span style="color:#fff">${cast}</span></span>
+            <span style="color:grey">Genre: <span style="color:#fff">${category}</span></span>
+            <span style="color:grey">This movie is: <span style="color:#fff">${movieAbout}</span></span>
 
           </div>
         </div>
       </div>
       <div class="movies-container mx-5">
       <h1>More Like This</h2>
+      <div class="row" id="suggestions-${id}">
+
+      </div>
       </div>
       <div class="About-movie-container ms-5">
         <h1>About ${name}</h1>
         <div class="d-flex flex-column justify-content-around" style="padding: 20px 36px 30px 0;">
-          <span class="p-1" style="color:grey">Director: <span style="color:#fff">chirtian bale, nolan, vladjjddj</span></span>
-          <span class="p-1" style="color:grey">Cast: <span style="color:#fff">chirtian bale, nolan, vladjjddj</span></span>
-          <span class="p-1" style="color:grey">Writer: <span style="color:#fff">chirtian bale, nolan, vladjjddj</span></span>
-          <span class="p-1" style="color:grey">Genres: <span style="color:#fff">chirtian bale, nolan, vladjjddj</span></span>
-          <span class="p-1" style="color:grey">This movie is: <span style="color:#fff">chirtian bale, nolan, vladjjddj</span></span>
+          <span class="p-1" style="color:grey">Director: <span style="color:#fff">${director}</span></span>
+          <span class="p-1" style="color:grey">Cast: <span style="color:#fff">${cast}</span></span>
+          <span class="p-1" style="color:grey">Writer: <span style="color:#fff">${writer}</span></span>
+          <span class="p-1" style="color:grey">Genres: <span style="color:#fff">${category}</span></span>
+          <span class="p-1" style="color:grey">This movie is: <span style="color:#fff">${movieAbout}</span></span>
 
         </div>
       </div>
     </div>
   </div>
+
 `;
+//suggestions loop//
+try {
+  let collection = await fetchCollecton();
+  
+  let Newcategory = ["New","Action","Popular"];
+  let suggetionsList = collection.filter((element) =>
+    Newcategory.includes(element.category)
+    )
+  
+    for(let i=0;i<9;i++){
+      console.log(suggetionsList[i])
+      addSuggestionstoDOM(suggetionsList[i]);
+    }
+  
+} catch (error) {
+  console.log(error)
+} 
+function addSuggestionstoDOM(key){
+  
+  const data = document.getElementById(`suggestions-${id}`);
+  const col = document.createElement("div");
+  col.setAttribute("class", "col-lg-3 p-3 col-md-6 col-sm-8");
+  col.setAttribute("style", "width:20rem");
+
+  data.append(col);
+  col.innerHTML=`
+  <div class="card " id="card" style="width:18rem">
+
+<div class="image-container">
+
+    <img class="card-img-top" src="${key.Imageurl}" id="${key.name}"  >
+    <div class="card-details">
+      <h5 class="card-title">${key.name}
+      </h5>
+      <form class="form">
+        <div style="display:flex;gap:13px">
+         <a href='../watch/?id=${key.id}'>
+         <button type="button" class="play-button"><i class="fa-solid fa-play"></i> <span class="btn-text">
+         Play </span></button>
+         </a>
+          <button type="button" class="like-button"> <i class="fa-solid fa-thumbs-up"> </i></button>
+          </div>
+            <button class="more-info" type="button" data-name=${key.id} ><i
+                class="fa-sharp fa-solid fa-chevron-down"></i> </button>
+      </form>
+    </div>
+    </div>
+    </div>`
+}
+
 }
 
 export {
