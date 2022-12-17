@@ -96,7 +96,7 @@ async function addMoviestoDOM(
     <div class="info-details">
       <button class="close" onclick="aclose(${id})"> <i class="fa-solid fa-xmark"> </i></button>
       <div class="info-trailer-container">
-        <iframe class="youtube-trailer" src=${trailerUrl} frameborder="0"
+        <iframe class="youtube-trailer" src='${trailerUrl}' frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen="true">
         </iframe>
@@ -120,7 +120,7 @@ async function addMoviestoDOM(
           </form>
         </div>
         <div class="cast-container d-flex flex-row">
-          <div class="bg-light  m-5-lg  mt-5 ms-0" style="width:1px;margin-right:20px !important"></div>
+          <div class="bg-light  m-lg-5  mt-5 ms-0" style="width:1px;margin-right:20px !important"></div>
           <div class="d-flex flex-column " style="padding: 30px 36px 30px 0;justify-content:space-evenly;">
             <span style="color:grey">Cast: <span style="color:#fff">${cast}</span></span>
             <span style="color:grey">Genre: <span style="color:#fff">${category}</span></span>
@@ -129,7 +129,7 @@ async function addMoviestoDOM(
           </div>
         </div>
       </div>
-      <div class="movies-container mx-5">
+      <div class="movies-container ms-5">
       <h1>More Like This</h2>
       <div class="row" id="suggestions-${id}">
 
