@@ -52,6 +52,7 @@ app.use(express.static('public'))
 app.use('/css',express.static(__dirname +'public/css'))
 app.use('/js',express.static(__dirname +'public/js'))
 app.use('/img',express.static(__dirname +'public/img'))
+app.use('/modules',express.static(__dirname +'public/modules'))
 // app.use('./../',express.static(__dirname +'frontend'))
 app.set('views', __dirname + '/views')
 app.engine('html', engine.mustache)
@@ -71,10 +72,14 @@ app.use(passport.session())
 app.use(methodOverride('_method'))
 
 app.get("/admin",(req,res)=>{
-    res.render('index.html')
+    res.render('admin/index.html')
 })
 app.get("/sign-up",(req,res)=>{
-    res.render('signup.html')
+    res.render('pages/signUp/index.html')
+    
+})
+app.get("/Home",(req,res)=>{
+    res.render('index.html')
     
 })
 app.get('/collection',async(req,res)=>
@@ -141,23 +146,38 @@ var newUser = new User({
 })
 console.log('newUser successfully created !')
 console.log("newuser: " + newUser)
-newUser.save().then(()=> console.log('newUser saved successfully'))
+newUser.save().then(()=> console.log('newUser saved successfully')).catch(e=> console.log(e))
 
 res.redirect('/sign-in')
   }
   catch (e) {
-    console.log(e.message)
+      res.redirect('/sign-up')
+    console.log(e)
+    
 }
 // db.collection("user-data").insertOne(users[0])
 
+
 //   console.log(users[0])
 })
-app.get("/Untitled-1",(req,res)=>{
-    res.render('Untitled-1.html')
+app.get("/browse",(req,res)=>{
+    res.render('pages/browse/index.html')
+    
+})
+app.get("/Movies",(req,res)=>{
+    res.render('pages/Movies/index.html')
+    
+})
+app.get("/New&Popular",(req,res)=>{
+    res.render('pages/New&Popular/index.html')
+    
+})
+app.get("/watch",(req,res)=>{
+    res.render('pages/watch/index.html')
     
 })
 app.get("/sign-in",(req,res)=>{
-    res.render('Sign In.html')
+    res.render('pages/signIn/index.html')
    
 })
 app.post('/sign-in',async(req,res)=>{
@@ -170,7 +190,7 @@ app.post('/sign-in',async(req,res)=>{
             return res.status(404).json(({ message: "Invalid Password"}))
         }
         const data = { email: req.body.email, password: req.body.password}
-        return res.redirect('/Untitled-1')
+        return res.redirect('/browse')
           
   
     } catch (error) {

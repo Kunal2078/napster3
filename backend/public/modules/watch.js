@@ -12,7 +12,7 @@ async function fetchMovies(ID) {
 
   // 1. Fetch adventures using the Backend API and return the data
   try {
-    let fetchdcities = await fetch(`http://192.168.1.7:8082/movie/?id=${ID}`);
+    let fetchdcities = await fetch(`http://127.0.0.1:8082/movie/?id=${ID}`);
 
     let array = await fetchdcities.json();
 

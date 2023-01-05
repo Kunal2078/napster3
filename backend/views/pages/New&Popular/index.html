@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Napster</title>
   <script src="https://kit.fontawesome.com/bce86fac31.js" crossorigin="anonymous"></script>
   <!-- CSS only -->
   <link rel="stylesheet" href="../../css/style.css">
@@ -77,8 +77,8 @@
     </nav>
   </nav>
 
-  <div class="container1" id="container1" style="padding: 60px;
-  height: 100vh;">
+  <div class="container1" id="container1" style="padding: 60px 0 200px;
+  height: auto;">
 
 
     <div class="row" id="data" style="justify-content: space-evenly ;">
@@ -101,8 +101,8 @@
 
 
   <script>
-    // window.onload= fun()
-    function fun() {
+
+function fun() {
       let box = document.querySelectorAll('.info-container')
 
 
@@ -121,18 +121,46 @@
         };
       });
     }
-    setTimeout(fun, 1000)
-
-
+  
+    
     function aclose(id) {
-
+   
+      
       let data = document.getElementById(id)
       data.classList.remove('active');
       let iframe = document.getElementsByClassName('youtube-trailer')
+      
 
-
-
+      
     }
+    function card(){
+
+let data=document.getElementById('data')
+let data1=document.querySelectorAll('.cards')
+
+
+data1.forEach(e =>{
+  e.addEventListener('click',e=>{
+   console.log(e.target.children[1])
+   e.target.children[1].classList.add('active')
+   let infocontainer=document.getElementsByClassName('info-container')
+   console.log(infocontainer)
+  })
+})  
+  
+}
+
+setTimeout(()=>{
+let timeout=document.querySelectorAll('.cards')
+timeout.forEach(e=>{
+e.classList.remove('timeout')
+
+  console.log(e)
+})
+},3000)
+
+setTimeout(fun, 1000)
+setTimeout(card, 1000)
   </script>
   <!-- // bootstrap js // -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"

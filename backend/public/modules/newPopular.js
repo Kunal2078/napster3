@@ -1,10 +1,10 @@
-import config from "../conf/index.js";
+// import config from "../conf/index.js";
 
 async function init() {
   //Fetches list of all cities along with their images and description
   let collection = await fetchCollecton();
 
-  let Newcategory = ["New"];
+  let Newcategory = ["New","Popular","Horror"];
   let newlist = collection.filter((element) =>
     Newcategory.includes(element.category)
   );
@@ -33,7 +33,7 @@ async function fetchCollecton() {
   // TODO: MODULE_CITIES
   // 1. Fetch cities using the Backend API and return the data
   try {
-    let fetchdcollection = await fetch("http://192.168.1.7:8082/collection");
+    let fetchdcollection = await fetch("http://127.0.0.1:8082/collection");
     let array = fetchdcollection.json();
 
     return array;
@@ -59,10 +59,11 @@ async function addMoviestoDOM(
 ) {
   // TODO: MODULE_CITIES
 
-  // 1. Populate the City details and insert those details into the DOM
-  const data = document.getElementById("data");
+  // 1. Populate the movies details and insert those details into the DOM
+  // const data = document.getElementById("data");
   const col = document.createElement("div");
-  col.setAttribute("class", "col-lg-3 p-3 col-md-6 col-sm-8");
+  col.setAttribute("class", "col-lg-3 p-3 col-md-6 col-sm-8 cards timeout");
+
   col.setAttribute("style", "width:20rem");
 
   data.append(col);
@@ -160,7 +161,6 @@ try {
     )
   
     for(let i=0;i<9;i++){
-      console.log(suggetionsList[i])
       addSuggestionstoDOM(suggetionsList[i]);
     }
   
@@ -170,8 +170,9 @@ try {
 function addSuggestionstoDOM(key){
   
   const data = document.getElementById(`suggestions-${id}`);
+  console.log(data)
   const col = document.createElement("div");
-  col.setAttribute("class", "col-lg-3 p-3 col-md-6 col-sm-8");
+  col.setAttribute("class", "col-lg-3 p-3 col-md-6 col-sm-8 ");
   col.setAttribute("style", "width:20rem");
 
   data.append(col);
@@ -197,7 +198,8 @@ function addSuggestionstoDOM(key){
       </form>
     </div>
     </div>
-    </div>`
+    </div>
+    `
 }
 
 }

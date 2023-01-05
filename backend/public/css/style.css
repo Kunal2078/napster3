@@ -10,9 +10,9 @@ body {
   flex-wrap: nowrap;
   align-items: center;
   justify-content: space-between;
-
+  background: rgb(0,0,0);
+  background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.9951330874146533) 88%, rgba(20,20,20,1) 100%);
   background-color: rgb(20, 20, 20);
-
   z-index: 11;
   width: 100%;
   height: 60px;
@@ -48,7 +48,7 @@ background: transparent;
 .carousel {
   z-index: 10;
   top: 43px;
-  height: 68vh;
+  height: 66vh;
   display: flex;
   margin-top: 50px;
   justify-content: center;
@@ -67,7 +67,7 @@ background: transparent;
   }
 }
 .carousel-inner {
-  width: 93% !important;
+  /* width: 93% !important; */
 }
 .carousel-indicators {
   margin-bottom: -1rem !important;
@@ -76,10 +76,15 @@ background: transparent;
   object-fit: cover;
   height: 75vh;
   aspect-ratio: 16/9;
-  width: 50%;
+  width: 86%;
+  margin: auto;
   filter: brightness(0.8);
 }
-
+.carousel-background-container{
+  filter: blur(6px);
+  height: 100vh;
+  position: absolute;
+}
 #container-fluid {
   display: flex;
   flex-wrap: inherit;
@@ -93,16 +98,17 @@ background: transparent;
 }
 
 .slider {
-  --slider-index: 0;
+
   display: flex;
   gap: 0.25rem;
   scroll-behavior: smooth;
   position: relative;
   scroll-padding-inline: 3rem;
   flex-grow: 1;
-  transform: translateX(calc(var(--slider-index) * -22%));
-  transition: transform 250ms ease-in-out;
-  padding-left: 45px !important;
+
+
+  padding-bottom: 20px !important;
+  padding-left: 61px !important;
 }
 
 *,
@@ -115,7 +121,7 @@ background: transparent;
   background: #fff;
   object-fit: cover;
   backdrop-filter: opactiy(0.1);
-  animation: card-loading 3s linear;
+  animation: card-loading 3s linear;  
 }
 #card {
   background-color: rgb(20, 20, 20);
@@ -185,7 +191,8 @@ h2 {
 
   padding-top: 50px;
   margin-top: 35px;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
   padding-bottom: 208px;
 }
 
@@ -372,6 +379,7 @@ h2 {
     display: flex;
     align-items: center;
     flex-direction: column;
+    pointer-events: none;
   }
   .image-container > img {
     animation: imagefade 3s ease-in-out;
@@ -753,8 +761,8 @@ h2 {
   width: 0;
   height: 0;
   position: fixed;
-  
-
+  overflow-y: scroll;
+overflow-x: hidden;
   scroll-behavior: smooth;
   z-index: 11;
   margin-left: auto;
@@ -767,10 +775,10 @@ animation: info 1000ms forwards ease;
 
 }
 .filter-body {
-  position: absolute;
+  position: fixed;
   filter: blur(30px);
   width: 100vw;
-  height: 100vh;
+height: 100vh;
   background-color: rgb(20 20 20);
   filter: opacity(0.8);
 }
@@ -864,13 +872,13 @@ animation: info 1000ms forwards ease;
 .hidden {
   opacity: 0;
   filter: blur(5px);
-  /* transform: translateX(-100%); */
+  transform: translateX(-100%);
   transition: all 1s;
 }
 .show {
   opacity: 1;
   filter: blur(0);
-  /* transform: translateX(0); */
+  transform: translateX(0);
 }
 .card:nth-child(1) {
   transition: 200ms;
@@ -1021,7 +1029,7 @@ animation: info 1000ms forwards ease;
 }
 
 .active {
-  display: flex;
+  display: block;
   width: 100vw;
  
 }
@@ -1057,4 +1065,8 @@ a {
   background-color: #2e2e2e;
   border-radius: 5px;
 
+}
+
+.timeout{
+  pointer-events: none;
 }

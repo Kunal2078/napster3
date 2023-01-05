@@ -1,63 +1,214 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="utf-8">
+  <link class="netflix-icon" rel="icon" href="img/netflixicon.png" />
+
+  <title>Napster</title>
+  <link rel="stylesheet" href="/css/home.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+
 </head>
+
 <body>
-    <form action="/admin" method="post">
-        <label for="image">image url
-        </label>
-            <input type="text" name="image" id="image">
-            <br>
-        <label for="movieName">movie name
-        </label>
-            <input type="text" name="movieName" id="movieName">
-            <br>
-        <label for="trailer">trailer url
-        </label>
-            <input type="text" name="trailer" id="trailer">
-            <br>
-        <label for="Description">Description
-        </label>
-            <input type="text" name="Description" id="Description">
-            <br>
-        <label for="movieUrl">movie-link
-        </label>
-            <input type="text" name="movieUrl" id="movieUrl">
-            <br>
-            <label for="category">category</label>
-            <select name="category" id="category" multiple >
-                <option value="Sci-fi">Sci-fi</option>
-                <option value="New">New</option>
-                <option value="commedy">commedy</option>
-                <option value="Action">Action</option>
-              </select>
-              <br>
-              <label for="director">director
-            </label>
-              <input type="text" name="director" id="director">
-              <br>
-              <label for="cast">cast
-            </label>
-              <input type="text" name="cast" id="cast">
-              <br>
-              <label for="writer">writer
-            </label>
-              <input type="text" name="writer" id="writer">
-              <br>
-              <label for="movieAbout">movieAbout
-            </label>
-              <input type="text" name="movieAbout" id="movieAbout">
-              <br>
-              <label for="rating">rating
-            </label>
-              <input type="number" name="rating" id="rating">
-              <br>
-            <button type="submit"> submit</button>
-            <button type="reset">reset</button>
-    </form>
+  <div class="sections-container">
+  <div class="background-img">
+<div class="transparent">
+
+
+    <nav class="nav-bar">
+    
+        <div class="logo-container">
+            <a href="/Napster" >
+
+            <img src="img/napster.png" alt="" >
+          </a>
+      </div>          
+        <div class="sign-in-btn">
+        <a href="/sign-in">
+
+        <input id="b1" type="button" name="signin" value="Sign In" onclick="">
+      </a>
+      </div>
+  
+    </nav>
+
+   
+
+    <div class="section1 hidden">
+      <div class="section-text">
+        <p class="s1">Amazing movies,TV <br>shows and more.</p>
+        <p class="s2">Watch anywhere. Cancel anytime.</p>
+        <p class="s3">Ready to watch? Enter your email to create or restart your membership.</p>
+        <br>
+     
+      </div>
+    
+
+        <form  id="frm1" action="#">
+          <div class="form-container">
+          <input id="user-email" class="email" type="email" name="email"  autocomplete="email" placeholder="Email address"   >
+          <br>
+          <a href="/sign-up">
+            
+            <input id="b3" type="button" name="get-started" value="Get Started >" onclick="useremail()">
+            </a>
+          </div>
+          </form>
+
+        </a>
+      
+    </div>
+  </div>
+  </div>
+  <hr>
+    <div class="section2">
+<div class="container-fluid">
+      <div class="text-container-2 hidden">
+
+        <p class="p1 hidden">Enjoy on your TV.</p>
+        
+          <div class="pe hidden">
+
+            <p class="p2">
+              Watch on smart TVs, PlayStation, Xbox,
+           
+              Chromecast,Apple TV, Blu-ray players and
+
+        
+               more.
+          </p> 
+          </div>
+      </p>
+      </div>
+      <div class="animation-container-1 hidden">
+        
+        <div class="content-container">
+          <video class="video" autoplay="" playsinline="" muted="" loop="">
+            <source src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-tv-in-0819.m4v" type="video/mp4">
+          </video>
+          <img alt="" class="our-story-card-img" src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png" data-uia="our-story-card-img"> -->
+          
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <hr>
+    <div class="section3">
+
+      
+      <div class="container-fluid-section3">
+        <div class="section3-text-container hidden" >
+
+          <h1>Download your shows <br> to watch offline.</h1>
+  
+          <h2>Save your favourites easily and always have <br> something to watch.
+          </h2>
+        </div>
+
+        <div class="animation-container hidden">
+          <div class="content-container-stranger-things">
+            <img class="our-story-card-image"src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/mobile-0819.jpg" alt="Strangers Things">
+            
+            <div class="card1">
+          
+              <img width="80px" height="100px"  src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/boxshot.png" alt="">
+              <div class="text-container">
+
+                <div class="text-0">
+                  Strangers Things 
+                              </div>
+                              <div class="text-1">
+                                <h style="color:blue;">Downloading...</h>
+                              </div>
+              </div>
+           <div class="our-story-card-download-animation">
+
+             <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/download-icon.gif" alt="">
+           </div>
+            </div>
+          </div>
+        </div>
+
+        
+      </div>
+      
+    </div>
+    
+    <hr>
+    <div class="section4">
+      <div class="container-fluid-section4">
+      <div class="section4-text-container hidden"   >
+
+        <h1>Watch everywhere.
+        </h1>
+        <h2>
+          Stream unlimited movies and TV shows on
+         your phone, tablet, laptop, and TV.
+        </h2>
+      </div>
+ 
+      <div class="animation-container hidden">
+        <div class="content-cntainer-storycard-2">
+          <div class="animation-video-container">
+
+         <video class="" autoplay="" playsinline="" muted="" loop="">
+            <source src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-devices-in.m4v" type="video/mp4">
+          </video>
+        </div>
+       
+        <div class="">
+          <img class="animation-image"src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/device-pile-in.png" alt="">
+        </div>
+      </div>
+      </div>
+    </div>
+    </div>
+    
+    <hr>
+    <div class="section5">
+      <div class="container-fluid-section5 hidden">
+      <div class="image-container">
+<img  class="image4"src="https://occ-0-2590-2186.1.nflxso.net/dnm/api/v6/19OhWN2dO19C9txTON9tvTFtefw/AAAABVxdX2WnFSp49eXb1do0euaj-F8upNImjofE77XStKhf5kUHG94DPlTiGYqPeYNtiox-82NWEK0Ls3CnLe3WWClGdiJP.png?r=5cf" alt="">
+</div>
+<div class="text-container-section5">
+  <h1>Create profiles for <br> children.
+  </h1>
+  <h2>
+    Send children on adventures with their favourite characters in a space made just for them—free with your membership.
+  </h2>
+</div>
+      </div>
+    
+        <div class="email-container hidden">
+          <h2>Ready to watch? Enter your email to create or restart your membership.</h2>
+          <form   id="frm1" action="#">
+<div class="email-btn-container">
+  <input id="user-email" class="email" type="email" name="email"  autocomplete="email" placeholder="Email address"   >
+  <a href="/sign-up">
+            
+    <input id="b3" type="button" name="get-started" value="Get Started >" onclick="useremail()">
+    </a>
+</form>
+</div>
+      
+     
+    </div>
+  </div>
+</div>
+
+
+<script src="js/home.js"></script>
+
+<script src="js/js1.js"></script>
+
+
 </body>
+
 </html>
